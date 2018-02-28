@@ -3,6 +3,7 @@ package com.ksilit;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.ksilit.core.InjectorModule;
+import com.ksilit.core.StageManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
@@ -21,5 +22,8 @@ public class Main extends Application {
     public void start(final Stage primaryStage) throws Exception {
         final InjectorModule injectorModule = new InjectorModule();
         final Injector injector = Guice.createInjector(injectorModule);
+        final StageManager stageManager = new StageManager(primaryStage);
+        stageManager.setInjector(injector);
+        stageManager.showMainStage();
     }
 }
