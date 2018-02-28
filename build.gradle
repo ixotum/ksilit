@@ -10,8 +10,10 @@ repositories {
 
 ext {
     logbackVersion = '1.2.3'
+    guiceVersion = '4.1.0'
 }
 
 dependencies {
     compile 'ch.qos.logback:logback-classic:' + logbackVersion
+    compile 'com.google.inject:guice:' + guiceVersion
 }
