@@ -17,6 +17,8 @@ public class StageManager {
     private Injector injector;
 
     public StageManager(final Stage primaryStage) {
+        checkArgument(primaryStage != null, "'primaryStage' must be defined");
+
         this.primaryStage = primaryStage;
     }
 
@@ -28,6 +30,7 @@ public class StageManager {
 
     public void showMainStage() throws IOException {
         final MainController mainController = injector.getInstance(MainController.class);
+        mainController.setStage(primaryStage);
         showStage(mainController);
     }
 
