@@ -11,9 +11,13 @@ repositories {
 ext {
     logbackVersion = '1.2.3'
     guiceVersion = '4.1.0'
+    testfxVersion = '4.0.13-alpha'
 }
 
 dependencies {
     compile 'ch.qos.logback:logback-classic:' + logbackVersion
     compile 'com.google.inject:guice:' + guiceVersion
+
+    testCompile 'org.testfx:testfx-core:' + testfxVersion
+    testCompile 'org.testfx:testfx-junit5:' + testfxVersion
 }
